@@ -10,6 +10,9 @@ function App() {
         <Route path="/">
           <Home />
         </Route>
+        <Route path="/:SummonerName">
+          <Home />
+        </Route>
       </Switch>
     </Router>
   );

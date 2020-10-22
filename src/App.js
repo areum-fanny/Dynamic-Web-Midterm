@@ -13,6 +13,9 @@ function App() {
         <Route path="/:SummonerName">
           <Home />
         </Route>
+        <Route path="/:ChampionName">
+          <Home />
+        </Route>
       </Switch>
     </Router>
     

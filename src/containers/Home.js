@@ -3,10 +3,13 @@ import { useHistory } from "react-router-dom";
 import ProfileIcon from "../components/ProfileIcon";
 import axios from "axios";
 import NavBar from "../components/NavBar";
+import ChampionEntry from "../components/ChampionEntry";
+
 function Home() {
   const history = useHistory();
   const [summonerData, setsummonerData] = useState({});
   const [summonerName, setSummonerName] = useState(null);
+  let puuid = '';
 
   useEffect(() => {
     axios
@@ -29,16 +32,17 @@ function Home() {
       setSummonerName(summonerName);
     }
   }, [history]);
-  console.log(summonerData);
   
+  puuid = summonerData.puuid;
+  console.log(summonerData);
   let profileIcon = summonerData.profileIconId;
   profileIcon = Number(profileIcon);
 
   return (
     <div>
       <NavBar />
-      <h1>Home</h1>
-      <img src="1.png" alt="LOL" width="400" height="400" />
+      
+      <ChampionEntry />
     </div>
   );
 }

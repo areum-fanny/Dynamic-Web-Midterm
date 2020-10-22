@@ -8,7 +8,7 @@ function NavBar() {
           <form>
             <label htmlFor="SummonerName">Summoner Name</label>
             <input type="text" id="SummonerName" name="SummonerName"></input>
-            <input type="submit" value="Submit"></input>
+            <input type="submit" value="Search"></input>
           </form>
         </div>
         <h2>Champions</h2>

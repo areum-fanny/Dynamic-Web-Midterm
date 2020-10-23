@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import ProfileIcon from "../components/ProfileIcon";
+//import ProfileIcon from "../components/ProfileIcon";
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import ChampionEntry from "../components/ChampionEntry";
@@ -9,6 +9,7 @@ function Home() {
   const history = useHistory();
   const [summonerData, setsummonerData] = useState({});
   const [summonerName, setSummonerName] = useState(null);
+  const [championID, setchampionID] = useState(null);
   let puuid = '';
 
   useEffect(() => {
@@ -28,23 +29,34 @@ function Home() {
     const searchParams = history.location.search;
     const urlParams = new URLSearchParams(searchParams);
     const summonerName = urlParams.get("SummonerName");
+    const id = urlParams.get("championid")
     if (summonerName) {
       setSummonerName(summonerName);
     }
+    if(id){
+      setchampionID(id);
+    }
   }, [history]);
-  
+  console.log("id",championID);
   puuid = summonerData.puuid;
   console.log(summonerData);
   let profileIcon = summonerData.profileIconId;
   profileIcon = Number(profileIcon);
-
-  return (
-    <div>
-      <NavBar />
-      
-      <ChampionEntry />
-    </div>
-  );
+  if(championID){
+    return (
+      <div>
+        <NavBar />
+        <ChampionEntry id={championID} />
+      </div>
+    );
+  }
+  else{
+    return (
+      <div>
+        <NavBar />
+      </div>
+    );
+  }
 }
 
 export default Home;

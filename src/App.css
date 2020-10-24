@@ -1,49 +1,158 @@
-.NavBar{
-    display:flex;
-    align-items: center;
-    flex-direction: row;
-    margin:0 auto;
-    max-width: 1080px;
-    justify-content: space-between;
+.Body {
+  background-color: hsl(120, 73%, 75%);
+  max-width: 1080px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/*Nav Bar*/
+.NavBar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1080px;
+  justify-content: space-evenly;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+.AppName {
+}
+
+.SearchBar {
+  background-color: lightcoral;
+}
+.SearchBar input {
+  padding: 10px;
+  margin: 10px;
+}
+.SearchBar label {
+  margin: 10px;
+}
+.dropDown {
+  display: flex;
+  flex-direction: row;
 }
 /* Dropdown Button */
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+.ChampionDropButton {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+  border: none;
+  width: 160px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.ChampionDropdown {
+  /* adjust this width depending to amount of text to display */
+  /* adjust height depending on number of options to display */
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.ChampionList {
+  overflow-x: hidden;
+  max-height: 300px;
+  text-align: center;
+  overflow: scroll;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.ChampionList a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.ChampionList::-webkit-scrollbar {
+  display: none;
+}
+/* Change color of dropdown links on hover */
+.ChampionList a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.ChampionDropdown:hover .ChampionList {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.ChampionDropdown:hover .ChampionDropButton {
+  background-color: #3e8e41;
+}
+
+.ChampionEntry {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.ChampionImage {
+  padding: 20px;
+  background-color: darkgray;
+}
+
+.ChampionImage img {
+  width: 756px;
+}
+.ChampionName {
+  font-size:30px;
+  font-weight: bold;
+  text-align: center;
+  background-color: lightgreen;
+}
+.ChampionLore {
+  width: 756px;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+.ChampionAbilityList {
+  display:flex;
+  align-items: center;
+  max-width: 1080px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ChampionAbility{
+  flex-basis:20%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  text-emphasis: wrap;
+  height:100px;
+  padding:20px;
+  text-align: left;
+  margin:0 auto;
+}
+.ChampionAbilityCategory {
+  background-color: lightsalmon;
+}
+.ChampionAbilityName {
+  background-color: lightsalmon;
+}
+
+.ChampionAbilityImg {
+
+}
+.ChampionAbilityDescription{
+  padding:20px;
+}

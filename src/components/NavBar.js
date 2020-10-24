@@ -1,29 +1,35 @@
 import React from "react";
 
 import Champions from "./Champions";
-
+import Dropdown from "./Dropdown";
 function NavBar() {
-
+  const keys = Object.keys(Champions[0].keys).length;
+  const data = Object.keys(Champions[0].data);
+  const key_data = Object.entries(Champions[0].keys);
+  //data.forEach(element => {
+  console.log("keys", key_data);
+  //});
   return (
     <header className="NavBar">
-      <h1>RIOT STATS TRACKER</h1>
+      <h3 className="AppName">RIOT STATS TRACKER</h3>
       <div>
-        <form>
+        <form className="SearchBar">
           <label htmlFor="SummonerName">Summoner Name</label>
           <input type="text" id="SummonerName" name="SummonerName"></input>
           <input type="submit" value="Search"></input>
         </form>
       </div>
-      <div className="dropdown">
-        <button className="dropbtn">Champion</button>
-        <div className="dropdown-content">
-          
-          <a href="/Champion/?championid=6">Champ1</a>
-          <a href="/Champion/?championid=1">Link 2</a>
-          <a href="/Champion/?championid=4">Link 3</a>
+      <div className="dropDown">
+        <div className="ChampionDropdown">
+          <button className="ChampionDropButton">Champion</button>
+          <div className="ChampionList">
+            {key_data.map((key) => {
+              return <a href={`/?championid=${key[0]}`}>{key[1]}</a>;
+            })}
+          </div>
         </div>
+        <button className="ChampionDropButton">Item</button>
       </div>
-      <h2>Items</h2>
     </header>
   );
 }

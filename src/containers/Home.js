@@ -4,13 +4,13 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import ChampionEntry from "../components/ChampionEntry";
+import PlayerEntry from "../components/PlayerEntry";
 
 function Home() {
   const history = useHistory();
   const [summonerData, setsummonerData] = useState({});
-  const [summonerName, setSummonerName] = useState(null);
+  const [summonerName, setSummonerName] = useState();
   const [championID, setchampionID] = useState(null);
-  let puuid = '';
 
   useEffect(() => {
     axios
@@ -29,32 +29,37 @@ function Home() {
     const searchParams = history.location.search;
     const urlParams = new URLSearchParams(searchParams);
     const summonerName = urlParams.get("SummonerName");
-    const id = urlParams.get("championid")
+    const id = urlParams.get("championid");
     if (summonerName) {
       setSummonerName(summonerName);
     }
-    if(id){
+    if (id) {
       setchampionID(id);
     }
   }, [history]);
-  console.log("id",championID);
-  puuid = summonerData.puuid;
-  console.log(summonerData);
-  let profileIcon = summonerData.profileIconId;
-  profileIcon = Number(profileIcon);
-  if(championID){
+ 
+  if (championID) {
     return (
-      <div>
+      <div className="Body">
         <NavBar />
         <ChampionEntry id={championID} />
       </div>
     );
+  } 
+  else if(summonerData){
+    return (
+      <div className="Body">
+        <NavBar />
+        <PlayerEntry data={summonerData}/>
+      </div>
+    );
   }
   else{
-    return (
-      <div>
+    return(
+      <div className="Body"> 
         <NavBar />
       </div>
+    
     );
   }
 }

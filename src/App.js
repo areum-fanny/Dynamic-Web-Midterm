@@ -14,10 +14,10 @@ function App() {
         <Route path="/:SummonerName">
           <Home />
         </Route>
-        <Route path="/Champion/:championid">
+        <Route path="/:championid">
           <Home />
         </Route>
-        <Route path="/Items/:itemid">
+        <Route path="/:itemid">
           <Home />
         </Route>
       </Switch>

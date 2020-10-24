@@ -1,4 +1,4 @@
-.Body {
+/*.Body {
   background-color: hsl(120, 73%, 75%);
   max-width: 1080px;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
   flex-direction: column;
 }
-
+*/
 
 /*Nav Bar*/
 .NavBar {
@@ -24,7 +24,7 @@
 }
 
 .SearchBar {
-  background-color: lightcoral;
+  margin-left:20px;
 }
 .SearchBar input {
   padding: 10px;
@@ -154,5 +154,6 @@
 
 }
 .ChampionAbilityDescription{
-  padding:20px;
+  padding-left:20px;
+  padding-bottom: 30px;
 }

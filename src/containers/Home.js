@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-//import ProfileIcon from "../components/ProfileIcon";
+
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import ChampionEntry from "../components/ChampionEntry";

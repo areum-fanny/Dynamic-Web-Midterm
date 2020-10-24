@@ -4,11 +4,9 @@ import Champions from "./Champions";
 import Dropdown from "./Dropdown";
 function NavBar() {
   const keys = Object.keys(Champions[0].keys).length;
-  const data = Object.keys(Champions[0].data);
+
   const key_data = Object.entries(Champions[0].keys);
-  //data.forEach(element => {
-  console.log("keys", key_data);
-  //});
+
   return (
     <header className="NavBar">
       <h3 className="AppName">RIOT STATS TRACKER</h3>

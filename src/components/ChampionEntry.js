@@ -4,7 +4,7 @@ import Champions from "./Champions";
 function ChampionEntry({ id }) {
   const championData = Champions[0].data[Champions[0].keys[id]];
   const championSpells = championData.spells;
-
+  document.getElementsByClassName('ChampionAbilityDescription').innerHTML = championData.passive.description;
   return (
     <div className="ChampionEntry">
       <div className="ChampionImage">
@@ -21,31 +21,31 @@ function ChampionEntry({ id }) {
       <div className="ChampionAbilityList">
         <div className="ChampionAbility">
           <p className="ChampionAbilityCategory">Passive</p>
-          <h3 className="ChampionAbilityName">{championData.passive.name}</h3>
+          <p className="ChampionAbilityName">{championData.passive.name}</p>
           <img className="ChampionAbilityImage" src={`/images/passive/${championData.passive.image.full}`} alt="Passive"/>
           <p className="ChampionAbilityDescription">{championData.passive.description}</p>
         </div>
         <div className="ChampionAbility">
         <p className="ChampionAbilityCategory">Q</p>
-          <h3>{championSpells[0].name}</h3>
+          <p>{championSpells[0].name}</p>
           <img src={`/images/spell/${championSpells[0].image.full}`} alt="Q" />
           <p className="ChampionAbilityDescription">{championSpells[0].description}</p>
         </div>
         <div className="ChampionAbility">
         <p className="ChampionAbilityCategory">W</p>
-          <h3>{championSpells[1].name}</h3>
+          <p>{championSpells[1].name}</p>
           <img src={`/images/spell/${championSpells[1].image.full}`} alt="W" />
           <p className="ChampionAbilityDescription">{championSpells[1].description}</p>
         </div>
         <div className="ChampionAbility">
         <p className="ChampionAbilityCategory">E</p>
-          <h3>{championSpells[2].name}</h3>
+          <p>{championSpells[2].name}</p>
           <img src={`/images/spell/${championSpells[2].image.full}`} alt="E" />
           <p className="ChampionAbilityDescription">{championSpells[2].description}</p>
         </div>
         <div className="ChampionAbility">
         <p className="ChampionAbilityCategory">R</p>
-          <h3>{championSpells[3].name}</h3>
+          <p>{championSpells[3].name}</p>
           <img src={`/images/spell/${championSpells[3].image.full}`} alt="R" />
           <p className="ChampionAbilityDescription">{championSpells[3].description}</p>
         </div>

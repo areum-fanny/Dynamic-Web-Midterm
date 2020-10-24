@@ -1,9 +1,10 @@
-import Axios from "axios";
+
 import React, {useState,useEffect} from "react";
 import axios from "axios";
+import ProfileIcon from "../components/ProfileIcon";
 function PlayerEntry({ data }) {
   console.log(data);
-  const [LeagueEntryDTO,setleagueentrydto] = useState();
+  const [LeagueEntryDTO,setleagueentrydto] = useState({});
   useEffect(() => {
     axios
       .get(
@@ -16,7 +17,8 @@ function PlayerEntry({ data }) {
         console.warn(error);
       });
   }, [data]);
-  console.log("league");
+  //console.log("league",LeagueEntryDTO.length);
+  //console.log("leaguedata",LeagueEntryDTO.valueof(0));
   if(LeagueEntryDTO){
       return (
           <h1>No entry</h1>

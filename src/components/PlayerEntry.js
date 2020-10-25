@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 import PlayerRankedDets from "./PlayerRankedDets";
-
+import PlayerMatchdets from "./PlayerMatchdets";
 function PlayerEntry({ summonerName }) {
-  const [summonerData, setsummonerData] = useState({});
+  const [summonerData, setsummonerData] = useState({ name: null });
   useEffect(() => {
     axios
       .get(
@@ -17,8 +17,8 @@ function PlayerEntry({ summonerName }) {
         console.warn(error);
       });
   }, [summonerName]);
-  console.log("name", summonerName);
-  if (summonerName != "") {
+
+  if (summonerData.name) {
     return (
       <div>
         <div className="SummonerBasicInfo">
@@ -34,8 +34,11 @@ function PlayerEntry({ summonerName }) {
           </div>
         </div>
         <PlayerRankedDets summonerID={summonerData.id} />
+        <PlayerMatchdets summoneraccountID={summonerData.accountId} />
       </div>
     );
+  } else {
+    return <div></div>;
   }
 }
 

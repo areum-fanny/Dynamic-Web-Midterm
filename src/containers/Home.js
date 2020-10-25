@@ -7,7 +7,7 @@ import PlayerEntry from "../components/PlayerEntry";
 
 function Home() {
   const history = useHistory();
-  const [summonerName, setSummonerName] = useState(null);
+  const [summonerName, setSummonerName] = useState();
   const [championID, setchampionID] = useState(null);
 
   useEffect(() => {
@@ -22,15 +22,15 @@ function Home() {
       setchampionID(id);
     }
   }, [history]);
-
-  if (championID != null) {
+  console.log(summonerName, "name");
+  if (championID !== null) {
     return (
       <div className="Body">
         <NavBar />
         <ChampionEntry id={championID} />
       </div>
     );
-  } else if (summonerName != null) {
+  } else if (summonerName != undefined) {
     return (
       <div className="Body">
         <NavBar />

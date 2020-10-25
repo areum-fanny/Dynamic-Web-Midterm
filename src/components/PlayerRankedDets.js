@@ -32,8 +32,6 @@ function PlayerRankedDets({ summonerID }) {
     };
   }, [LeagueEntryDTO]);
 
-  console.log("RankedSolo", RankedSoloDTO);
-  console.log("Rankedflex", RankedFlexDTO);
   if (RankedFlexDTO.rank == null && RankedSoloDTO.rank == null) {
     return <div></div>;
   } else if (RankedSoloDTO.rank != null && RankedFlexDTO.rank != null) {

@@ -1,10 +1,8 @@
 import React from "react";
 
 import Champions from "./Champions";
-import Dropdown from "./Dropdown";
-function NavBar() {
-  const keys = Object.keys(Champions[0].keys).length;
 
+function NavBar() {
   const key_data = Object.entries(Champions[0].keys);
 
   return (

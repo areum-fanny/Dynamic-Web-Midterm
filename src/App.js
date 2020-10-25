@@ -1,9 +1,9 @@
-import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import './App.css';
-import ChampionEntry from './components/ChampionEntry';
-import Home from './containers/Home';
+import "./App.css";
+
+import Home from "./containers/Home";
 function App() {
   return (
     <Router>
@@ -22,9 +22,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
-    
   );
-  
 }
 
 export default App;

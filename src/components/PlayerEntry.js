@@ -1,30 +1,42 @@
+import React, { useEffect, useState } from "react";
 
-import React, {useState,useEffect} from "react";
 import axios from "axios";
-import ProfileIcon from "../components/ProfileIcon";
-function PlayerEntry({ data }) {
-  console.log(data);
-  const [LeagueEntryDTO,setleagueentrydto] = useState({});
+import PlayerRankedDets from "./PlayerRankedDets";
+
+function PlayerEntry({ summonerName }) {
+  const [summonerData, setsummonerData] = useState({});
   useEffect(() => {
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${data.id}?api_key=${process.env.REACT_APP_API_KEY}`
+        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${process.env.REACT_APP_API_KEY}`
       )
       .then(function (response) {
-        setleagueentrydto(response.data);
+        setsummonerData(response.data);
       })
       .catch(function (error) {
         console.warn(error);
       });
-  }, [data]);
-  //console.log("league",LeagueEntryDTO.length);
-  //console.log("leaguedata",LeagueEntryDTO.valueof(0));
-  if(LeagueEntryDTO){
-      return (
-          <h1>No entry</h1>
-      );
+  }, [summonerName]);
+  console.log("name", summonerName);
+  if (summonerName != "") {
+    return (
+      <div>
+        <div className="SummonerBasicInfo">
+          <div className="SummonerProfileIcon">
+            <img
+              src={`/images/profileicon/${summonerData.profileIconId}.png`}
+              alt="profileIcon"
+            />
+          </div>
+          <div className="SummonerNameandLevel">
+            <h1>Name: {summonerData.name}</h1>
+            <h2>Level: {summonerData.summonerLevel}</h2>
+          </div>
+        </div>
+        <PlayerRankedDets summonerID={summonerData.id} />
+      </div>
+    );
   }
-  return <div>There is entry</div>;
 }
 
 export default PlayerEntry;

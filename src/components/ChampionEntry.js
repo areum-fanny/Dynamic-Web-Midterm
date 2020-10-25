@@ -4,7 +4,8 @@ import Champions from "./Champions";
 function ChampionEntry({ id }) {
   const championData = Champions[0].data[Champions[0].keys[id]];
   const championSpells = championData.spells;
-  document.getElementsByClassName('ChampionAbilityDescription').innerHTML = championData.passive.description;
+  //function setdesc(desc) {
+
   return (
     <div className="ChampionEntry">
       <div className="ChampionImage">

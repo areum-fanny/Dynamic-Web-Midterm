@@ -22,7 +22,7 @@ function Home() {
       setchampionID(id);
     }
   }, [history]);
-  console.log(summonerName, "name");
+
   if (championID !== null) {
     return (
       <div className="Body">

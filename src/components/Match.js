@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
+import SummonerSpell from "./SummonerSpell";
+import Champions from "./Champions";
 
 function Match({ matchId }) {
   const [matchData, setMatchdata] = useState({});
@@ -120,11 +122,62 @@ function Match({ matchId }) {
       player10Data,
     };
   }, [participantData]);
-
+  console.log(matchData);
   if (participantData[0] != null && participantIdentityData[0] != null) {
     return (
       <div>
-        <p>{player1Data.stats.item0}</p>
+        <div>
+          <img
+            src={`/images/profileicon/${player1.profileIcon}.png`}
+            alt="profileIcon"
+          />
+          <p>{player1.profileIcon}</p>
+          <p>{player1.summonerName}</p>
+        </div>
+        <div>
+          <img
+            src={`/images/item/${player1Data.stats.item0}.png`}
+            alt="Item0"
+          />
+          <img
+            src={`/images/item/${player1Data.stats.item1}.png`}
+            alt="Item0"
+          />
+          <img
+            src={`/images/item/${player1Data.stats.item2}.png`}
+            alt="Item0"
+          />
+          <img
+            src={`/images/item/${player1Data.stats.item3}.png`}
+            alt="Item0"
+          />
+          <img
+            src={`/images/item/${player1Data.stats.item4}.png`}
+            alt="Item0"
+          />
+          <img
+            src={`/images/item/${player1Data.stats.item5}.png`}
+            alt="Item0"
+          />
+          <img
+            src={`/images/spell/${SummonerSpell[0][player1Data.spell1Id]}`}
+            alt="Item0"
+          />
+          <img
+            src={`/images/spell/${SummonerSpell[0][player1Data.spell2Id]}`}
+            alt="Item0"
+          />
+          <img
+            src={`/images/champion/${
+              Champions[0].keys[player1Data.championId]
+            }.png`}
+            alt="Item0"
+          />
+          <p>
+            {player1Data.stats.kills}/{player1Data.stats.deaths}/
+            {player1Data.stats.assists}
+          </p>
+        </div>
       </div>
     );
   }

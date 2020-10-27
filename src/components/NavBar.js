@@ -1,9 +1,34 @@
 import React from "react";
 
 import Champions from "./Champions";
+import Items from "./Items";
 
 function NavBar() {
-  const key_data = Object.entries(Champions[0].keys);
+  /*We are creating an array of the of ids and names of champions. 
+  We then sort out the names and find the ids associated with the respective champion and push them to a new array.
+  */
+
+  const championkeys = Object.keys(Champions[0].keys);
+  const championName = Object.values(Champions[0].keys);
+  const championID = [];
+  championName.sort();
+  championName.map((name) => {
+    let champId = championkeys.find((id) => Champions[0].keys[id] === name);
+    championID.push(champId);
+  });
+  //We do something similar to get the items sorted out in alphabetical order
+  const itemkeys = Object.keys(Items[0].data);
+  const itemdata = Items[0].data;
+  const itemname = [];
+  const itemid = [];
+  itemkeys.map((key) => {
+    itemname.push(itemdata[key].name);
+  });
+  itemname.sort();
+  itemname.map((name) => {
+    let id = itemkeys.find((element) => itemdata[element].name === name);
+    itemid.push(id);
+  });
 
   return (
     <header className="NavBar">
@@ -16,15 +41,30 @@ function NavBar() {
         </form>
       </div>
       <div className="dropDown">
-        <div className="ChampionDropdown">
-          <button className="ChampionDropButton">Champion</button>
-          <div className="ChampionList">
-            {key_data.map((key) => {
-              return <a href={`/?championid=${key[0]}`}>{key[1]}</a>;
+        <div className="Dropdown">
+          <button className="DropButton">Champion</button>
+          <div className="DropList">
+            {championName.map((name, i) => {
+              return (
+                <a key={i} href={`/?championid=${championID[i]}`}>
+                  {name}
+                </a>
+              );
             })}
           </div>
         </div>
-        <button className="ChampionDropButton">Item</button>
+        <div className="Dropdown">
+          <button className="DropButton">Item</button>
+          <div className="DropList">
+            {itemid.map((id, i) => {
+              return (
+                <a key={i} href={`/?itemid=${id}`}>
+                  {itemname[i]}
+                </a>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </header>
   );

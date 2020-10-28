@@ -1,30 +1,34 @@
-/*.Body {
-  background-color: hsl(120, 73%, 75%);
-  max-width: 1080px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.Body {
+  margin: 0 auto;
+  font-family: "Lobster", cursive;
+  min-height: 1000px;
 }
-*/
 
 /*Nav Bar*/
 .NavBar {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin: 0 auto;
+  padding: 40px 0 px 40px 0 px;
+  height: 100px;
   max-width: 1080px;
+  margin: 0 auto;
   justify-content: space-evenly;
   background-color: black;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   color: white;
-  padding: 20px;
+  text-decoration: underline;
+  text-decoration-color: #e8a7eb;
 }
+
 .AppName {
+  flex-basis: 18%;
 }
 
 .SearchBar {
   margin-left: 20px;
+  flex-basis: 62%;
 }
 .SearchBar input {
   padding: 10px;
@@ -33,18 +37,24 @@
 .SearchBar label {
   margin: 10px;
 }
+.SumbitButton {
+  width: 50px;
+}
 .dropDown {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  flex-basis: 20%;
 }
 
 .DropButton {
   background-color: black;
-  color: white;
   font-size: 16px;
   padding: 20px;
   border: none;
-  width: 160px;
+  width: 140px;
+  color: white;
+  font-family: "Lobster", cursive;
 }
 
 .Dropdown {
@@ -59,8 +69,9 @@
   overflow: scroll;
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  width: 160px;
+  background-color: white;
+
+  width: 140px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -77,7 +88,7 @@
 }
 
 .DropList a:hover {
-  background-color: #ddd;
+  background-color: rgba(0, 255, 0, 0.2);
 }
 
 .Dropdown:hover .DropList {
@@ -96,36 +107,56 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 40px 0;
+
+  max-width: 1080px;
+  margin: 40px auto;
+  border-radius: 20px;
+  color: white;
 }
 
 .ChampionImage {
   padding: 20px;
-  background-color: darkgray;
+  margin: 40px 20px;
+  background-color: white;
+  border-radius: 20px;
+  background-color: black;
 }
 
 .ChampionImage img {
   width: 756px;
+  border-radius: 15px;
 }
 .ChampionName {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  background-color: lightgreen;
+  color: black;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 15px;
 }
 .ChampionLore {
   width: 756px;
   font-size: 20px;
   font-style: italic;
   text-align: center;
+  box-shadow: 0px 0px 18px yellow;
+  border-radius: 15px;
+  margin: 40px 0px;
+  padding: 40px;
+  background-color: black;
 }
 
 .ChampionAbilityList {
   display: flex;
-  align-items: center;
   max-width: 1080px;
   flex-direction: row;
   justify-content: space-around;
+  align-content: flex-start;
+  margin: 0px 0px 40px 0px;
+  margin: 40px 0;
+  border-radius: 15px;
 }
 
 .ChampionAbility {
@@ -134,16 +165,23 @@
   align-items: center;
   flex-direction: column;
   text-emphasis: wrap;
-  height: 100px;
-  padding: 20px;
+  padding: 10px;
   text-align: left;
   margin: 0 auto;
+  border-radius: 25px;
+  border: 2px solid white;
+  background-color: black;
 }
 .ChampionAbilityCategory {
-  background-color: lightsalmon;
+  font-style: italic;
+  font-weight: 600;
+  margin: 0 auto;
+  text-align: center;
 }
 .ChampionAbilityName {
-  background-color: lightsalmon;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
 }
 
 .ChampionAbilityImg {
@@ -152,10 +190,13 @@
   padding-left: 20px;
   padding-bottom: 30px;
 }
-
-.SummonerBasicInfo {
-  padding-top: 20px;
+.SummonerEntry {
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SummonerBasicInfo {
 }
 .SummonerProfileIcon {
   background-color: pink;
@@ -181,4 +222,89 @@
   display: flex;
   flex-direction: row;
   padding: 20px;
+}
+.MatchEntry {
+  display: flex;
+  flex-direction: row;
+}
+/* Item Entry*/
+.ItemEntry {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border-radius: 20px;
+}
+.ItemBasicInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 20px 0px 20px;
+  text-align: center;
+}
+.ItemName {
+  font-size: 30px;
+  font-weight: bold;
+}
+.Itemtext {
+  font-size: 25px;
+  margin: 20px 0 0 0;
+  font-style: italic;
+}
+.Itemprice {
+  font-size: 15px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.ItemImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+}
+.ItemDescription {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 10px 20px;
+  max-width: 400px;
+}
+.ItemDescriptionheading {
+  font-weight: bold;
+  font-size: 23px;
+}
+.ItemDescription a {
+  text-decoration: none;
+  pointer-events: none;
+}
+.ItemDesc {
+  margin: 0 auto;
+  font-size: 17px;
+}
+.ItemDesc stats {
+  font-style: italic;
+}
+.ItemDesc unique,
+passive,
+aura {
+  font-style: italic;
+  font-weight: 600;
+}
+.ItemForminto {
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0px 60px 0px;
+}
+
+.ItemForminto img {
+  padding: 5px;
+  border-radius: 15px;
 }

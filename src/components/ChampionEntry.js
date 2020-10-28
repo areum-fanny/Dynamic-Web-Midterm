@@ -19,7 +19,7 @@ function ChampionEntry({ id }) {
         {championData.id}, {championData.title}
       </p>
       <p className="ChampionLore">"{championData.lore}"</p>
-      <h2>Abilities</h2>
+      <h2 style={{ color: "black" }}>Abilities</h2>
       <div className="ChampionAbilityList">
         <div className="ChampionAbility">
           <p className="ChampionAbilityCategory">Passive</p>
@@ -38,7 +38,7 @@ function ChampionEntry({ id }) {
         </div>
         <div className="ChampionAbility">
           <p className="ChampionAbilityCategory">Q</p>
-          <p>{championSpells[0].name}</p>
+          <p className="ChampionAbilityName">{championSpells[0].name}</p>
           <img src={`/images/spell/${championSpells[0].image.full}`} alt="Q" />
           <p
             className="ChampionAbilityDescription"
@@ -49,7 +49,7 @@ function ChampionEntry({ id }) {
         </div>
         <div className="ChampionAbility">
           <p className="ChampionAbilityCategory">W</p>
-          <p>{championSpells[1].name}</p>
+          <p className="ChampionAbilityName">{championSpells[1].name}</p>
           <img src={`/images/spell/${championSpells[1].image.full}`} alt="W" />
           <p
             className="ChampionAbilityDescription"
@@ -60,7 +60,7 @@ function ChampionEntry({ id }) {
         </div>
         <div className="ChampionAbility">
           <p className="ChampionAbilityCategory">E</p>
-          <p>{championSpells[2].name}</p>
+          <p className="ChampionAbilityName">{championSpells[2].name}</p>
           <img src={`/images/spell/${championSpells[2].image.full}`} alt="E" />
           <p
             className="ChampionAbilityDescription"
@@ -71,7 +71,7 @@ function ChampionEntry({ id }) {
         </div>
         <div className="ChampionAbility">
           <p className="ChampionAbilityCategory">R</p>
-          <p>{championSpells[3].name}</p>
+          <p className="ChampionAbilityName">{championSpells[3].name}</p>
           <img src={`/images/spell/${championSpells[3].image.full}`} alt="R" />
           <p
             className="ChampionAbilityDescription"

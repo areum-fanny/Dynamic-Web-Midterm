@@ -20,7 +20,7 @@ function PlayerEntry({ summonerName }) {
 
   if (summonerData.name) {
     return (
-      <div>
+      <div className="SummonerEntry">
         <div className="SummonerBasicInfo">
           <div className="SummonerProfileIcon">
             <img

@@ -37,7 +37,7 @@ function NavBar() {
         <form className="SearchBar">
           <label htmlFor="SummonerName">Summoner Name</label>
           <input type="text" id="SummonerName" name="SummonerName"></input>
-          <input type="submit" value="Search"></input>
+          <input className="Submitbutton" type="submit" value="Search"></input>
         </form>
       </div>
       <div className="dropDown">

@@ -27,7 +27,9 @@ function Home() {
       setitemid(itemid);
     }
   }, [history]);
-
+  console.log("summonerName", summonerName);
+  console.log("championID", championID);
+  console.log("itemID", itemID);
   if (championID !== null) {
     return (
       <div className="Body">

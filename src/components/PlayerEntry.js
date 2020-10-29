@@ -29,11 +29,12 @@ function PlayerEntry({ summonerName }) {
             />
           </div>
           <div className="SummonerNameandLevel">
-            <h1>Name: {summonerData.name}</h1>
-            <h2>Level: {summonerData.summonerLevel}</h2>
+            <p className="SummonerName">Name: {summonerData.name}</p>
+            <p className="SummonerLevel">Level: {summonerData.summonerLevel}</p>
           </div>
         </div>
         <PlayerRankedDets summonerID={summonerData.id} />
+        <h1 className="SummonerRecentMatch">Recent Match</h1>
         <PlayerMatchdets summoneraccountID={summonerData.accountId} />
       </div>
     );

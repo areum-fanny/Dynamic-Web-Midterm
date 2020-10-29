@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 import ChampionEntry from "../components/ChampionEntry";
 import PlayerEntry from "../components/PlayerEntry";
 import ItemEntry from "../components/ItemEntry";
-
+import HomePage from "../components/Homepage";
 function Home() {
   const history = useHistory();
   const [summonerName, setSummonerName] = useState();
@@ -27,9 +27,7 @@ function Home() {
       setitemid(itemid);
     }
   }, [history]);
-  console.log("summonerName", summonerName);
-  console.log("championID", championID);
-  console.log("itemID", itemID);
+
   if (championID !== null) {
     return (
       <div className="Body">
@@ -55,6 +53,7 @@ function Home() {
     return (
       <div className="Body">
         <NavBar />
+        <HomePage />
       </div>
     );
   }

@@ -19,7 +19,7 @@ function ChampionEntry({ id }) {
         {championData.id}, {championData.title}
       </p>
       <p className="ChampionLore">"{championData.lore}"</p>
-      <h2 style={{ color: "black" }}>Abilities</h2>
+      <h2 style={{ color: "black", textTransform: "uppercase" }}>Abilities</h2>
       <div className="ChampionAbilityList">
         <div className="ChampionAbility">
           <p className="ChampionAbilityCategory">Passive</p>

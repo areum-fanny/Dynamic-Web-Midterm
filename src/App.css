@@ -1,7 +1,9 @@
 .Body {
   margin: 0 auto;
   font-family: "Lobster", cursive;
+  max-width: 1080px;
   min-height: 1000px;
+  background-color: rgb(201, 200, 200);
 }
 
 /*Nav Bar*/
@@ -15,20 +17,21 @@
   margin: 0 auto;
   justify-content: space-evenly;
   background-color: black;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   color: white;
-  text-decoration: underline;
-  text-decoration-color: #e8a7eb;
 }
 
 .AppName {
   flex-basis: 18%;
+  text-align: center;
 }
 
 .SearchBar {
   margin-left: 20px;
   flex-basis: 62%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
 }
 .SearchBar input {
   padding: 10px;
@@ -40,6 +43,7 @@
 .SumbitButton {
   width: 50px;
 }
+
 .dropDown {
   display: flex;
   flex-direction: row;
@@ -88,7 +92,7 @@
 }
 
 .DropList a:hover {
-  background-color: rgba(0, 255, 0, 0.2);
+  background-color: #aaeba7;
 }
 
 .Dropdown:hover .DropList {
@@ -96,7 +100,7 @@
 }
 
 .Dropdown:hover .DropButton {
-  background-color: #3e8e41;
+  background-color: rgb(243, 91, 91);
 }
 /*End of Navbar*/
 
@@ -107,17 +111,15 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 40px 0;
-
   max-width: 1080px;
-  margin: 40px auto;
+  margin: 20px auto;
   border-radius: 20px;
   color: white;
 }
 
 .ChampionImage {
   padding: 20px;
-  margin: 40px 20px;
+  margin: 20px 20px 0 20px;
   background-color: white;
   border-radius: 20px;
   background-color: black;
@@ -141,9 +143,8 @@
   font-size: 20px;
   font-style: italic;
   text-align: center;
-  box-shadow: 0px 0px 18px yellow;
   border-radius: 15px;
-  margin: 40px 0px;
+  margin: 10px auto;
   padding: 40px;
   background-color: black;
 }
@@ -155,8 +156,11 @@
   justify-content: space-around;
   align-content: flex-start;
   margin: 0px 0px 40px 0px;
-  margin: 40px 0;
+  margin: 20px auto;
   border-radius: 15px;
+  background-color: rgb(201, 200, 200);
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .ChampionAbility {
@@ -169,7 +173,7 @@
   text-align: left;
   margin: 0 auto;
   border-radius: 25px;
-  border: 2px solid white;
+  border: 2px solid rgb(201, 200, 200);
   background-color: black;
 }
 .ChampionAbilityCategory {
@@ -182,6 +186,7 @@
   font-weight: bold;
   font-size: 15px;
   text-align: center;
+  color: rgb(233, 70, 70);
 }
 
 .ChampionAbilityImg {
@@ -191,41 +196,178 @@
   padding-bottom: 30px;
 }
 .SummonerEntry {
-  margin: 0 auto;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 .SummonerBasicInfo {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: black;
+  border: 4px solid black;
+  border-radius: 15px;
+}
+.SummonerName {
+  margin: 10px auto;
+}
+.SummonerLevel {
+  margin: 0 auto;
 }
 .SummonerProfileIcon {
-  background-color: pink;
 }
 .SummonerProfileIcon img {
   width: 100px;
-  height: 100px;
   border: 4px solid black;
+  pointer-events: none;
+  border-radius: 10px;
 }
 .SummonerNameandLevel {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: orange;
-}
 
-.Ranked {
-  display: flex;
-  flex-direction: row;
+  align-items: center;
 }
-
 .RankedList {
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 10px;
+  margin: 10px 0 0 0;
 }
+.Ranked {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-basis: 50%;
+  border: 4px solid black;
+  border-radius: 15px;
+  margin: 0 20px;
+  padding: 10px 20px;
+  background-color: black;
+  width: 300px;
+}
+.Ranked:hover {
+  background-color: rgba(240, 109, 109, 0.911);
+  border-color: rgba(240, 109, 109, 0.911);
+}
+.RankedImage {
+  flex-basis: 30%;
+  align-items: center;
+}
+.RankedImage img {
+  width: 120px;
+  pointer-events: none;
+}
+
+.RankedDets {
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.RankedDets h1 {
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 5px;
+}
+.RankedDets p {
+  font-size: 14px;
+  margin: 0 auto;
+  text-align: center;
+}
+/*MatchEntry*/
+
 .MatchEntry {
   display: flex;
   flex-direction: row;
+  height: 80px;
+  margin: 0 auto;
+  padding: 5px;
+  border: 2px solid grey;
+  color: black;
+}
+.Team2 .MatchEntry {
+  flex-direction: row-reverse;
+}
+.PlayerChampimg {
+  flex-basis: 15%;
+  margin: 0 auto;
+}
+.PlayerChampimg img {
+  width: 80px;
+}
+.PlayerItemandName {
+  flex-basis: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.PlayerID {
+}
+.PlayerName {
+  flex-basis: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.PlayerName p {
+  font-size: 13px;
+  margin: 0 auto;
+}
+
+.PlayerID {
+  text-decoration: none;
+  font-weight: bold;
+}
+.PlayerItems {
+  flex-basis: 50%;
+  margin: 0 10px;
+}
+
+.PlayerItems img {
+  margin: 0 auto;
+  width: 40px;
+  border-radius: 7px;
+  border: 2px solid black;
+}
+.PlayerSummonerSpell {
+  flex-basis: 5%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.PlayerSummonerSpell img {
+  width: 35px;
+  border-radius: 5px;
+  flex-basis: 50%;
+  padding: 2px;
+}
+
+.RecentMatch {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: black;
+  border-radius: 15px;
+}
+.SummonerRecentMatch {
+  color: black;
+  margin: 10px 0px 20px 0px;
+}
+
+.Team1 {
+  flex-basis: 50%;
+}
+.Team2 {
+  flex-basis: 50%;
 }
 /* Item Entry*/
 .ItemEntry {
@@ -243,7 +385,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 40px 20px 0px 20px;
+  margin: 20px 20px 0px 20px;
   text-align: center;
 }
 .ItemName {
@@ -253,6 +395,7 @@
 .Itemtext {
   font-size: 25px;
   margin: 20px 0 0 0;
+  padding: 5px;
   font-style: italic;
 }
 .Itemprice {
@@ -285,15 +428,19 @@
   margin: 0 auto;
   font-size: 17px;
 }
+
 .ItemDesc stats {
   font-style: italic;
 }
 .ItemDesc unique,
 passive,
-aura {
+aura,
+active {
   font-style: italic;
   font-weight: 600;
+  color: rgb(233, 70, 70);
 }
+
 .ItemForminto {
   max-width: 500px;
   display: flex;
@@ -307,4 +454,197 @@ aura {
 .ItemForminto img {
   padding: 5px;
   border-radius: 15px;
+}
+.HomePage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.WebsiteDescription {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 900px;
+}
+.WebsiteDescription p {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .ChampionAbilityList {
+    flex-direction: column;
+  }
+  .ChampionAbility {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .ChampionLore {
+    width: 70vw;
+  }
+
+  .ChampionImage img {
+    width: 85vw;
+  }
+  .ChampionAbilityDescription {
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 920px) {
+  .NavBar {
+    flex-direction: column;
+    height: 200px;
+  }
+  .AppName,
+  .SearchBar {
+    flex-basis: 30%;
+  }
+  .AppName {
+    margin: 10px auto;
+  }
+  .dropDown {
+    flex-basis: 40%;
+  }
+  .AppName {
+    margin: 0 auto;
+  }
+  .SearchBar {
+    margin: 0 auto;
+  }
+  .RankedList {
+    flex-direction: column;
+  }
+  .Ranked {
+    margin: 5px;
+    height: 150px;
+    justify-content: center;
+  }
+  .Team2 .MatchEntry {
+    flex-direction: row;
+  }
+  .RecentMatch {
+    flex-direction: column;
+  }
+  .ChampionLore {
+    font-size: 15px;
+  }
+  .ChampionAbilityDescription {
+    font-size: 15px;
+  }
+  .ChampionName,
+  .ChampionEntry h2 {
+    font-size: 30px;
+  }
+  .WebsiteDescription {
+    width: 90vw;
+  }
+  .WebsiteDescription p {
+    font-size: 15px;
+  }
+  .HomePage h1 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .ItemName {
+    font-size: 20px;
+  }
+  .Itemtext {
+    font-size: 18px;
+    margin: 10px 0 0 0;
+    padding: 3px;
+  }
+  .Itemprice {
+    font-size: 15px;
+    padding: 5px;
+  }
+  .ItemImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+  }
+  .ItemDescription {
+    margin: 10px 20px;
+  }
+  .ItemDescriptionheading {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+  }
+
+  .ItemDesc {
+    font-size: 12px;
+  }
+  .ItemForminto img {
+    padding: 2px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .SearchBar {
+    flex-direction: column;
+  }
+  .NavBar {
+    height: 250px;
+  }
+  .ChampionName,
+  .ChampionEntry h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .MatchEntry {
+    height: 40px;
+  }
+  .PlayerChampimg img {
+    width: 40px;
+  }
+  .PlayerName {
+    padding: 1px;
+  }
+  .PlayerName p {
+    margin: 0 auto;
+    font-size: 10px;
+  }
+  .PlayerItems {
+    flex-basis: 50%;
+    margin: 0 5px;
+  }
+  .PlayerName {
+    flex-direction: row;
+  }
+  .PlayerName p {
+    margin: 0 15px;
+  }
+
+  .PlayerKDA p {
+    font-size: 8px;
+  }
+  .PlayerItems img {
+    width: 20px;
+    border-radius: 2px;
+  }
+  .PlayerSummonerSpell img {
+    width: 17px;
+    border-radius: 2px;
+  }
+  .Ranked {
+    width: 150px;
+    flex-direction: column;
+  }
+  .RankedImage img {
+    width: 80px;
+  }
+  .ChampionAbilityDescription {
+    font-size: 12px;
+  }
+  .WebsiteDescription p {
+    font-size: 14px;
+  }
+  .HomePage h1 {
+    font-size: 18px;
+  }
 }

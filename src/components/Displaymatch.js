@@ -4,7 +4,7 @@ import Champions from "./Champions";
 function Displaymatch({ playerinfo, playerdata }) {
   return (
     <div className="MatchEntry">
-      <div>
+      <div className="PlayerChampimg">
         <a href={`/?championid=${playerdata.championId}`}>
           <img
             src={`/images/champion/${
@@ -13,26 +13,22 @@ function Displaymatch({ playerinfo, playerdata }) {
             alt="Item0"
           />
         </a>
-        <div>
-          <img
-            src={`/images/spell/${SummonerSpell[0][playerdata.spell1Id]}`}
-            alt="Item0"
-          />
-          <img
-            src={`/images/spell/${SummonerSpell[0][playerdata.spell2Id]}`}
-            alt="Item0"
-          />
-        </div>
       </div>
-      <div>
-        <div>
-          <p>{playerinfo.player.summonerName}</p>
-          <p>
+      <div className="PlayerItemandName">
+        <div className="PlayerName">
+          <a
+            className="PlayerID"
+            href={`/?SummonerName=${playerinfo.player.summonerName}`}
+          >
+            <p>{playerinfo.player.summonerName}</p>
+          </a>
+
+          <p className="PlayerKDA">
             {playerdata.stats.kills}/{playerdata.stats.deaths}/
             {playerdata.stats.assists}
           </p>
         </div>
-        <div>
+        <div className="PlayerItems">
           <a href={`/?itemid=${playerdata.stats.item0}`}>
             <img
               src={`/images/item/${playerdata.stats.item0}.png`}
@@ -70,6 +66,16 @@ function Displaymatch({ playerinfo, playerdata }) {
             />
           </a>
         </div>
+      </div>
+      <div className="PlayerSummonerSpell">
+        <img
+          src={`/images/spell/${SummonerSpell[0][playerdata.spell1Id]}`}
+          alt="Item0"
+        />
+        <img
+          src={`/images/spell/${SummonerSpell[0][playerdata.spell2Id]}`}
+          alt="Item0"
+        />
       </div>
     </div>
   );

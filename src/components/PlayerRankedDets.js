@@ -33,18 +33,33 @@ function PlayerRankedDets({ summonerID }) {
   }, [LeagueEntryDTO]);
 
   if (RankedFlexDTO.rank == null && RankedSoloDTO.rank == null) {
-    return <div></div>;
+    return (
+      <div>
+        <div className="Ranked" style={{ flexDirection: "column" }}>
+          <div className="RankedDets">
+            <h1>Ranked Solo</h1>
+            <p>You have not played RankedSolo</p>
+          </div>
+        </div>
+        <div className="Ranked" style={{ flexDirection: "column" }}>
+          <div className="RankedDets">
+            <h1>Ranked Flex</h1>
+            <p>You have not played RankedFlex</p>
+          </div>
+        </div>
+      </div>
+    );
   } else if (RankedSoloDTO.rank != null && RankedFlexDTO.rank != null) {
     return (
       <div className="RankedList">
         <div className="Ranked">
-          <div>
+          <div className="RankedImage">
             <img
               src={`/images/tier-icons/base-icons/${RankedSoloDTO.tier}.png`}
               alt=""
             ></img>
           </div>
-          <div>
+          <div className="RankedDets">
             <h1>Ranked Solo</h1>
             <p>
               {RankedSoloDTO.tier} {RankedSoloDTO.rank}
@@ -53,17 +68,24 @@ function PlayerRankedDets({ summonerID }) {
             <p>
               Win: {RankedSoloDTO.wins} Loss: {RankedSoloDTO.losses}
             </p>
-            <p>Win Ratio:</p>
+            <p>
+              Win Ratio:
+              {Math.round(
+                (RankedSoloDTO.wins /
+                  (RankedSoloDTO.wins + RankedSoloDTO.losses)) *
+                  100
+              ) / 100}
+            </p>
           </div>
         </div>
         <div className="Ranked">
-          <div>
+          <div className="RankedImage">
             <img
               src={`/images/tier-icons/base-icons/${RankedFlexDTO.tier}.png`}
               alt=""
             ></img>
           </div>
-          <div>
+          <div className="RankedDets">
             <h1>Ranked Flex</h1>
             <p>
               {RankedFlexDTO.tier} {RankedFlexDTO.rank}
@@ -72,7 +94,14 @@ function PlayerRankedDets({ summonerID }) {
             <p>
               Win: {RankedFlexDTO.wins} Loss: {RankedFlexDTO.losses}
             </p>
-            <p>Win Ratio: </p>
+            <p>
+              Win Ratio:{" "}
+              {Math.round(
+                (RankedFlexDTO.wins /
+                  (RankedFlexDTO.wins + RankedFlexDTO.losses)) *
+                  100
+              ) / 100}
+            </p>
           </div>
         </div>
       </div>
@@ -81,17 +110,19 @@ function PlayerRankedDets({ summonerID }) {
     return (
       <div className="RankedList">
         <div className="Ranked">
-          <h1>Ranked Solo</h1>
-          <p>You have not played Ranked Solo</p>
+          <div className="RankedDets">
+            <h1>Ranked Solo</h1>
+            <p>You have not played Ranked Solo</p>
+          </div>
         </div>
         <div className="Ranked">
-          <div>
+          <div className="RankedImage">
             <img
               src={`/images/tier-icons/base-icons/${RankedFlexDTO.tier}.png`}
               alt=""
             ></img>
           </div>
-          <div>
+          <div className="RankedDets">
             <h1>Ranked Flex</h1>
             <p>
               {RankedFlexDTO.tier} {RankedFlexDTO.rank}
@@ -109,13 +140,13 @@ function PlayerRankedDets({ summonerID }) {
     return (
       <div className="RankedList">
         <div className="Ranked">
-          <div>
+          <div className="RankedImage">
             <img
               src={`/images/tier-icons/base-icons/${RankedSoloDTO.tier}.png`}
               alt=""
             ></img>
           </div>
-          <div>
+          <div className="RankedDets">
             <h1>Ranked Solo</h1>
             <p>
               {RankedSoloDTO.tier} {RankedSoloDTO.rank}
@@ -124,12 +155,21 @@ function PlayerRankedDets({ summonerID }) {
             <p>
               Win: {RankedSoloDTO.wins} Loss: {RankedSoloDTO.losses}
             </p>
-            <p>Win Ratio:</p>
+            <p>
+              Win Ratio:{" "}
+              {Math.round(
+                (RankedSoloDTO.wins /
+                  (RankedSoloDTO.wins + RankedSoloDTO.losses)) *
+                  100
+              ) / 100}
+            </p>
           </div>
         </div>
-        <div className="Ranked">
-          <h1>Ranked Flex</h1>
-          <p>You have not played RankedFlex</p>
+        <div className="Ranked" style={{ flexDirection: "column" }}>
+          <div className="RankedDets">
+            <h1>Ranked Flex</h1>
+            <p>You have not played RankedFlex</p>
+          </div>
         </div>
       </div>
     );

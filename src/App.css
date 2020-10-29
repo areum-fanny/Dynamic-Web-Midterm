@@ -2,10 +2,15 @@
   margin: 0 auto;
   font-family: "Lobster", cursive;
   max-width: 1080px;
-  min-height: 1000px;
+  min-height: 1200px;
   background-color: rgb(201, 200, 200);
 }
-
+.Footer {
+  margin: 0 auto;
+  max-width: 1080px;
+  height: 50px;
+  background-color: black;
+}
 /*Nav Bar*/
 .NavBar {
   display: flex;
@@ -357,6 +362,7 @@
   padding: 20px;
   background-color: black;
   border-radius: 15px;
+  margin: 0 0 40px 0;
 }
 .SummonerRecentMatch {
   color: black;
@@ -513,12 +519,10 @@ active {
   .SearchBar {
     margin: 0 auto;
   }
-  .RankedList {
-    flex-direction: column;
-  }
   .Ranked {
-    margin: 5px;
-    height: 150px;
+    width: 150px;
+    height: 250px;
+    flex-direction: column;
     justify-content: center;
   }
   .Team2 .MatchEntry {
@@ -632,8 +636,7 @@ active {
     border-radius: 2px;
   }
   .Ranked {
-    width: 150px;
-    flex-direction: column;
+    height: 200px;
   }
   .RankedImage img {
     width: 80px;

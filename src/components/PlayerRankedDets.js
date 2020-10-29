@@ -34,17 +34,17 @@ function PlayerRankedDets({ summonerID }) {
 
   if (RankedFlexDTO.rank == null && RankedSoloDTO.rank == null) {
     return (
-      <div>
+      <div className="RankedList">
         <div className="Ranked" style={{ flexDirection: "column" }}>
           <div className="RankedDets">
             <h1>Ranked Solo</h1>
-            <p>You have not played RankedSolo</p>
+            <p>You have not played Ranked Solo</p>
           </div>
         </div>
         <div className="Ranked" style={{ flexDirection: "column" }}>
           <div className="RankedDets">
             <h1>Ranked Flex</h1>
-            <p>You have not played RankedFlex</p>
+            <p>You have not played Ranked Flex</p>
           </div>
         </div>
       </div>
@@ -168,7 +168,7 @@ function PlayerRankedDets({ summonerID }) {
         <div className="Ranked" style={{ flexDirection: "column" }}>
           <div className="RankedDets">
             <h1>Ranked Flex</h1>
-            <p>You have not played RankedFlex</p>
+            <p>You have not played Ranked Flex</p>
           </div>
         </div>
       </div>

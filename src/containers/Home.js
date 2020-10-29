@@ -6,6 +6,7 @@ import ChampionEntry from "../components/ChampionEntry";
 import PlayerEntry from "../components/PlayerEntry";
 import ItemEntry from "../components/ItemEntry";
 import HomePage from "../components/Homepage";
+import Footer from "../components/Footer";
 function Home() {
   const history = useHistory();
   const [summonerName, setSummonerName] = useState();
@@ -44,10 +45,12 @@ function Home() {
     );
   } else if (itemID !== null) {
     return (
-      <div className="Body">
-        <NavBar />
-        <ItemEntry id={itemID} />
-      </div>
+      <>
+        <div className="Body">
+          <NavBar />
+          <ItemEntry id={itemID} />
+        </div>
+      </>
     );
   } else {
     return (

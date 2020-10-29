@@ -3,7 +3,8 @@ import Items from "./Items";
 
 function ItemEntry({ id }) {
   const itemdata = Items[0].data[id];
-  if (itemdata == undefined) return <div>No item found summoner!</div>;
+  if (itemdata == undefined)
+    return <div className="ItemEntry">No item found summoner!</div>;
   function createMarkup(data) {
     return { __html: data };
   }
